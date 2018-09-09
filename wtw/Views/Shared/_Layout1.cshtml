@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- App & fonts-->
+    <!-- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i&amp;amp;subset=latin-ext"> -->
+
+    @Styles.Render("~/Content/css")
+
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <![endif]-->
+
+    <title>@ViewBag.Title - WalkThisWay</title>
+
+</head>
+<body>
+    <div class="page-wrap">
+
+        <!-- header -->
+        <header class="header header__style-02">
+            <div class="container">
+                <div class="header__logo"><a href="@Url.Action("Index","Iteration1")"><img src="/assets/img/logo.png" alt="" /></a></div>
+
+                <div class="header__toogleGroup">
+                    <div class="header__chooseLanguage">
+                        <!-- dropdown -->
+                        <div class="dropdown" data-init="dropdown">
+                            <a class="dropdown__toggle" href="javascript:void(0)"></a>
+                            <div class="dropdown__content" data-position="right">
+                                <ul class="list-style-none">
+                                    <li><a href="#">English</a></li>
+                                    <li><a href="#">Hindi</a></li>
+                                    <li><a href="#">中</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- End / dropdown -->
+                    </div>
+
+                    <div class="search-form" style="min-width:100px">
+                    </div>
+                </div>
+
+                <!-- consult-nav -->
+                <nav class="consult-nav">
+
+                    <!-- consult-menu -->
+                    <ul class="consult-menu">
+                        <li>
+                            <a href="@Url.Action("Index","Iteration1")">Home</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Statistics","Iteration1")">Statistics</a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("Rules","Iteration1")">Rules</a>
+                        </li>
+                        <!--
+                        <li>
+                            <a href="@Url.Action("Rewards", "Iteration1")">Rewards</a>
+                        </li>-->
+                        <!--
+                        <li>
+                            <a href="@Url.Action("Forum", "Iteration1")">Forum</a>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="#">More</a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="@Url.Action("Contact", "Iteration1")">contact</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("About", "Iteration1")">About</a>
+                                </li>
+                                <li>
+                                    <a href="#">others</a>
+                                </li>
+                            </ul>
+                        </li>
+                        -->
+                    </ul><!-- consult-menu -->
+
+                    <div class="navbar-toggle"><span></span><span></span><span></span></div>
+                </nav><!-- End / consult-nav -->
+
+            </div>
+        </header><!-- End / header -->
+
+        @RenderBody()
+        <!-- footer -->
+        <footer class="footer">
+            <div class="footer__copyright footer__item">2018 &copy; Copyright TechBees. All rights Reserved.<div class="consult_backToTop"><a href="#" id="back-to-top">Back To Top</a></div><div style="align-content:flex-start"></div></div>
+
+        </footer><!-- End / footer -->
+
+    </div>
+    <!-- Vendors-->
+    @Scripts.Render("~/bundles/vendors")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false))
+
+</body>
+</html>
+

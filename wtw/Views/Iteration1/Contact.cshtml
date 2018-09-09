@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<div style="width:auto;height:8em">
+    <img src="~/assets/img/blackbar.png" style="background-size:cover" />
+</div>
+
+<!-- Content-->
+<div class="md-content">
+
+    <!-- page-title -->
+    <div class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-0 offset-sm-0 offset-md-0 offset-lg-2 ">
+                    <h2 class="page-title__title">@ViewBag.Title</h2>
+
+                    <!--  -->
+                    <nav>
+                        <a class="breadcrumb__item" href="@Url.Action("Index","Home")">Home</a><span class="breadcrumb__item active">@ViewBag.Title</span>
+                    </nav><!-- End /  -->
+                    <div style="margin:3em">
+                        <address>
+                            Dandenong<br />
+                            Caulfield, VIC3162<br />
+                            <abbr title="Phone">P:</abbr>
+                            +61 04 8888 8888
+                        </address>
+
+                        <address>
+                            <strong>Support:</strong>   <a href="mailto:techbees@gmail.com">techbees@gmail.com</a><br />
+                            <strong>Marketing:</strong> <a href="mailto:techbees@gmail.com">techbees@gmail.com</a>
+                        </address>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <section class="md-section">
+            <div class="text-center"><a class="btn btn-primary btn-w180" href="#">Load more</a></div>
+        </section>
+    </div><!-- End / page-title -->
+</div>
+<!-- End / Content-->

@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Navigation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+    #map {
+        height: 100%;
+    }
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
+<div style="width:auto;height:8em">
+    <img src="~/assets/img/blackbar.png" style="background-size:cover" />
+</div>
+
+<!-- Content-->
+<div class="md-content">
+
+    <!-- page-title -->
+    <div class="page-title">
+        <div class="container">
+            <div class="row" style="background:linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%)">
+                <div class="col-lg-8 offset-0 offset-sm-0 offset-md-0 offset-lg-2 ">
+                    <h2 class="page-title__title">@ViewBag.Title</h2>
+
+                    <!-- start / navibar -->
+                    <nav>
+                        <a class="breadcrumb__item" href="@Url.Action("Index","Home")">Home</a><span class="breadcrumb__item active">@ViewBag.Title</span>
+                    </nav><!-- End / navibar -->
+
+
+
+                </div>
+            </div>
+
+            <div class="col-md-12" style="padding-top:3em">
+                <div style="width:50%;margin:auto"><input class="form-control" style="border:groove" id="txtStart" placeholder="Starting point" type="text" name="Start" maxlength="100"></div>
+                <div style="width:50%;margin:auto"><input class="form-control" style="border:groove" id="txtEnd" placeholder="Destination" type="text" name="End" maxlength="100"></div>
+
+                <hr />
+                <div id="map" style="padding:1em;border:groove;height:600px">
+
+                </div>
+            </div>
+        </div>
+        <section class="md-section">
+            <div class="text-center"><a class="btn btn-primary btn-w180" href="#">Load more</a></div>
+        </section>
+    </div><!-- End / page-title -->
+</div>
+
+
+<!-- End / Content-->
+
+<script src="/assets/js/navigation.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKoXlekiI84_yo1N8Yux6tWzeNqLBHhYI&libraries=places&callback=initMap" async defer></script>

@@ -1,0 +1,42 @@
+﻿#mainBubble {
+    height:auto;
+}
+
+#barchart {
+    background: #fff;
+    border: solid 1px #ddd;
+    box-shadow: 0 0 4px rgba(0,0,0,0);
+    font: 10px sans-serif;
+    height: 200px;
+    position: relative;
+    width: 80%;
+}
+
+#blank {
+    background: #fff;
+    border: solid 1px #ddd;
+    box-shadow: 0 0 4px rgba(0,0,0,0);
+    font: 10px sans-serif;
+    height: 50px;
+    position: relative;
+    width: 80%;
+}
+
+#mainBubble svg {
+    position:relative;
+}
+
+#mainBubble circle.topBubble {
+    fill: #b6ff00;
+    stroke: #666;
+    stroke-width: 1.5px;
+}
+
+.bar-chart {
+    background-color: lightskyblue;
+    width: 100%;
+}
+
+.bar:hover {
+    fill: lightskyblue;
+}

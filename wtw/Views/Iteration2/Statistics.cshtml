@@ -1,0 +1,126 @@
+﻿
+@{
+    ViewBag.Title = "Statistics";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <style type="text/css">
+
+        @@media(min-width: 525px) {
+            .barchart {
+                width: 500px;
+                height: 500px;
+            }
+
+            .linechart {
+                width: 525px;
+                height: 525px;
+            }
+        }
+
+        @@media(max-width: 524px) {
+            .barchart {
+                width:360px;
+                height:360px;
+            }
+
+            .linechart {
+                width: 360px;
+                height: 360px;
+            }
+        }
+    </style>
+
+    <link href="/assets/css/stat-bubble.css" rel="stylesheet" type="text/css" />
+    <!-- js-->
+    <!-- load the d3.js library -->
+    <!--End / js-->
+</head>
+
+<div style="width:auto;height:8em">
+    <img src="~/assets/img/blackbar.png" style="background-size:cover" />
+</div>
+<!-- Content-->
+<div class="md-content">
+
+    <!-- page-title -->
+    <div class="page-title">
+        <div class="container">
+            <div class="row" style="margin:auto">
+                <div class="col-lg-8 offset-0 offset-sm-0 offset-md-0 offset-lg-2 ">
+                    <h2 class="page-title__title">@ViewBag.Title</h2>
+                    <nav>
+                        <a class="breadcrumb__item" href="@Url.Action("Index","Home")">Home</a><span class="breadcrumb__item active">@ViewBag.Title</span>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+        <section class="md-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <hr />
+                        <div style="margin:2em"></div>
+                    </div>
+                    <div class="col-lg-12">
+                        <!--<iframe frameborder=0 width="800" height="600" src="https://reports.zoho.com/open-view/1804641000000002397/5d65ba53161787410f83624c6bf54d1b"></iframe>-->
+                    </div>
+                    <div class="col-lg-12">
+                        <hr />
+                        <div style="margin:2em"></div>
+                        <h3>Compare your suburb to the top 5 most dangerous suburbs</h3>
+                    </div>
+                    <div class="col-lg-12">
+                        <div style="margin-bottom:1em"><strong>Your Postcode</strong></div>
+                        <div style="width:50%;margin:auto"><input style="border:groove" id="txtNumber" placeholder="4 number only" onkeypress="return isNumberKey(event)" type="text" name="txtNumber" maxlength="4"></div>
+                        <div><button type="button" class="btn btn-primary" onclick="searchmysuburb()" id="searchButton">Search</button></div>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+
+                        <div class="barchart" id="inputbarchart"></div>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <div class="linechart" id="linechart"></div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <hr />
+                        <div style="margin:2em"></div>
+                    </div>
+                    <div class="col-lg-12">
+                        <!--<iframe frameborder=0 width="500" height="300" src="https://reports.zoho.com/open-view/1804641000000002840/edf5c5000cec5c351c1d9c414b02c8f8"></iframe>-->
+                    </div>
+                    <div class="col-lg-12">
+                        <hr />
+                        <div style="margin:2em"></div>
+                    </div>
+                    <div class="col-lg-12">
+                        <!--<iframe frameborder=0 width="800" height="600" src="https://reports.zoho.com/open-view/1804641000000012127/891fed13a6c30ef5423f1bd92e738190"></iframe>-->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="align-content:center"></section>
+        <section class="md-section">
+            <div class="text-center"><a class="btn btn-primary btn-w180" href="#">Load more</a></div>
+        </section>
+
+    </div><!-- End / page-title -->
+</div>
+<!-- End / Content-->
+<!-- js-->
+<!-- load the d3.js library -->
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<!--<script src="/assets/js/stat-bubble.js"></script>-->
+<script src="/assets/js/validator.js"></script>
+<script src="/assets/vendors/charts/echarts.js"></script>
+<script src="/assets/vendors/charts/echarts.min.js"></script>
+<script src="/assets/js/charts.js"></script>
+<script src="/assets/vendors/charts/theme/shine.js"></script>
+<script src="/assets/vendors/charts/theme/vintage.js"></script>
+<!--<script src="/assets/js/inputbarchart.js"></script>-->
+<!--End / js-->
