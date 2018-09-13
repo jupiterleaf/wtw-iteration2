@@ -60,5 +60,12 @@ namespace wtw.Controllers
 
             return View();
         }
+
+        public ActionResult Test()
+        {
+            ViewBag.Message = "Your Test page.";
+
+            return View();
+        }
     }
 }

@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Rules";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -59,14 +58,12 @@
     }
 </style>
 
-<div style="width:auto;height:8em">
-    <img src="~/assets/img/blackbar.png" style="background-size:cover" />
-</div>
+<link href="~/Content/templatemo-style.css" rel="stylesheet" />
+<link rel="stylesheet" href="http://fonts.useso.com/css?family=Open+Sans:300,400">   <!-- Google web font "Open Sans" -->
 
-<!-- Content-->
-<div class="md-content">
-    <!-- page-title -->
-    <div class="page-title">
+<div class="container tm-container" style="background-image: url('../assets/img/rules/strip-bg.jpg'); width:100%;">
+
+    <div style="height:200px;text-align:center;padding:100px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-0 offset-sm-0 offset-md-0 offset-lg-2 ">
@@ -74,98 +71,198 @@
 
                     <!--  -->
                     <nav style="margin-bottom:5em">
-                        <a class="breadcrumb__item" href="@Url.Action("Index","Home")">Home</a><span class="breadcrumb__item active">@ViewBag.Title</span>
+                        <a class="breadcrumb__item" href="@Url.Action("Index","Iteration2")">Home</a><span class="breadcrumb__item active">@ViewBag.Title</span>
                     </nav><!-- End /  -->
 
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="grid-container">
-            <div class="rule1">
-                <h4 class="tm-section-header gray-text">Pedestrians should always-</h4>
-                <div class="thin-font" style="text-align:left">
-                    <ol>
-                        • Use the shortest or most direct way to cross the road
-                    </ol>
-                    <ol>
-                        • Cross to the nearest edge of the road after getting off a tram
-                    </ol>
-                    <ol>
-                        • Obey traffic instructions from a police officer
-                    </ol>
-                    <ol>
-                        • Give way to vehicles at roundabouts
-                    </ol>
-                    <ol>
-                        • Obey a 'no pedestrian' sign
-                    </ol>
+
+
+
+
+
+    <div class="tm-page-content">
+
+        <!-- #home -->
+        <section class="row tm-section" style="background-image: url('../assets/img/rules/strip-bg-01.jpg');">
+
+            <div class="tm-white-curve-left col-xs-12 col-sm-12 col-md-12 col-lg-7 col-xl-6">
+                <div class="tm-white-curve-left-rec"></div>
+                <div class="tm-white-curve-left-circle"></div>
+                <div class="tm-white-curve-text">
+                    <h2 class="tm-section-header blue-text">Do's and Dont's on road</h2>
+                    <p> </p>
+                    <h4 class="tm-section-header gray-text">Pedestrians are not allowed to:</h4>
+                    <p class="thin-font">
+                        • cross the road if they are facing an amber or red traffic or pedestrian light.
+                        <br>
+                        • cross the road within 20 meters of a pedestrian crossing - they must use the crossing.
+                        <br>
+                        • get out of moving vehicles.
+                        <br>
+                        • cross a railway level crossing when it is not allowed.
+                        <br>
+                        • walk along, or fail to give way when crossing, a path which is for bicycles and wheeled devices (a path showing a 'Bicycle lane' sign).
+                    </p>
                 </div>
             </div>
-            <div class="img1">
-                <img src="~/assets/img/rules/rule1.jpg" />
+
+            <div class="tm-home-right col-xs-12 col-sm-12 col-md-12 col-lg-7 col-xl-6">
+                <h4 class="tm-section-header">Pedestrians must:</h4>
+                <p class="thin-font">
+                    • use the shortest or most direct way to cross the road.
+                    <br>
+                    • cross to the nearest edge of the road after getting off a tram.
+                    <br>
+                    • obey traffic instructions from a police officer.
+                    <br>
+                    • give way to vehicles at roundabouts.
+                    <br>
+                    • obey a 'no pedestrian' sign.
+                </p>
             </div>
-            <div class="img2">
-                <img src="~/assets/img/rules/rule2.jpg" />
-            </div>
-            <div class="rule2">
-                <h4 class="tm-section-header">Pedestrians should NOT-</h4>
-                <div class="thin-font" style="text-align:left">
-                    <ol>
-                        • Cross the road if they are facing an amber or red traffic or pedestrian light
-                    </ol>
-                    <ol>
-                        • Cross the road within 20 meters of a pedestrian crossing - they must use the crossing
-                    </ol>
-                    <ol>
-                        • Get out of moving vehicles
-                    </ol>
-                    <ol>
-                        • Cross a railway level crossing when it is not allowed
-                    </ol>
-                    <ol>
-                        • Walk along, or fail to give way when crossing, a path which is for bicycles and wheeled devices (a path showing a 'Bicycle lane' sign)
-                    </ol>
+
+        </section> <!-- #home -->
+        <!-- #services -->
+        <section class="row tm-section" style="background-image: url('../assets/img/rules/strip-bg-02.jpg');">
+            <div class="tm-flex-center col-xs-12 col-sm-6 col-md-6 col-lg-5 col-xl-6">
+                <div style="width:65%;">
+                    <div style="width:65%;">
+                        <img src="~/assets/img/rules/rule1.jpg" alt="Image" class="img-fluid tm-img">
+                    </div>
                 </div>
             </div>
-            <div class="rule3">
-                <h4 class="tm-section-header">Pedestrians should obey the Traffic Lights-</h4>
-                <div class="thin-font" style="text-align:left">
-                    <ol>
-                        • A green man means you can cross, if it is safe to do so.
-                    </ol>
-                    <ol>
-                        • A flashing red man means you can continue to cross but should not start crossing.
-                    </ol>
-                    <ol>
-                        • A steady red man means do not start to cross - wait for the green man before beginning to cross
-                    </ol>
+
+            <div class="tm-white-curve-right col-xs-12 col-sm-6 col-md-6 col-lg-7 col-xl-6">
+
+                <div class="tm-white-curve-right-circle"></div>
+                <div class="tm-white-curve-right-rec"></div>
+
+                <div class="tm-white-curve-text">
+                    <h2 class="tm-section-header red-text">Safe crossing procedure</h2>
+                    <p>STOP</p>
+                    <p class="thin-font">one step back from the kerb or shoulder of the road if there is no footpath. </p>
+                    <p>LOOK</p>
+                    <p class="thin-font">in all directions for approaching traffic.</p>
+                    <p>LISTEN</p>
+                    <p class="thin-font">in all directions for approaching traffic.</p>
+                    <p>THINK</p>
+                    <p class="thin-font">about whether it is safe to cross the road – when the road is clear or all traffic has stopped.</p>
                 </div>
-            </div>
-            <div class="img3" style="margin:5em">
-                <img src="~/assets/img/rules/rule3.jpg" />
-            </div>
-            <div class="sign1">
-                <h3>Safe procedure to cross the road-</h3>
-            </div>
-            <div class="sign2">
-                <h3>STOP-</h3>
-                <h5>one step back from the kerb or shoulder of the road if there is no footpath.</h5>
-            </div>
-            <div class="sign3">
-            </div>
-            <div class="sign4">
-            </div>
-            <div class="reminder1">
 
             </div>
-        </div>
+        </section> <!-- #services -->
+        <!-- #about -->
+        <section class="row tm-section" style="background-image: url('../assets/img/rules/strip-bg-03.jpg');">
+            <div class="tm-white-curve-left col-xs-12 col-sm-6 col-md-6 col-lg-7 col-xl-6">
+                <div class="tm-white-curve-left-rec">
 
-        <section class="md-section">
-            <div class="text-center"><a class="btn btn-primary btn-w180" href="#">Load more</a></div>
-        </section>
-    </div><!-- End / page-title -->
-</div>
-<!-- End / Content-->
+                </div>
+                <div class="tm-white-curve-left-circle">
+
+                </div>
+                <div class="tm-white-curve-text">
+                    <h2 class="tm-section-header gray-text">Intersection lights</h2>
+                    <p>
+                        • A <b style="color: green">green</b> man means you can cross, if it is safe to do so.
+                        <br>
+                        • A flashing <b style="color: red">red</b> man means you can continue to cross but should not start crossing.
+                        <br>
+                        • A steady <b style="color: red">red</b> man means do not start to cross - wait for the <b style="color: green">green</b> man before beginning to cross.
+                    </p>
+                </div>
+
+            </div>
+            <div class="tm-flex-center col-xs-12 col-sm-6 col-md-6 col-lg-5 col-xl-6">
+                <div style="width:65%;">
+                    <img src="~/assets/img/rules/rule2.jpg" alt="Image" class="img-fluid tm-img">
+                </div>
+
+            </div>
+        </section> <!-- #about -->
 
 
+    </div>
+
+</div> <!-- .container -->
+<!-- load JS files -->
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script><!-- Tether for Bootstrap, http://stackoverflow.com/questions/34567939/how-to-fix-the-error-error-bootstrap-tooltips-require-tether-http-github-h -->
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery.singlePageNav.min.js"></script>
+<!-- Templatemo scripts -->
+<script>
+
+
+    var bigNavbarHeight = 90;
+    var smallNavbarHeight = 68;
+    var navbarHeight = bigNavbarHeight;
+
+    $(document).ready(function () {
+
+        var topOffset = 180;
+
+        $(window).scroll(function () {
+
+            if ($(this).scrollTop() > topOffset) {
+                $(".navbar-container").addClass("sticky");
+            }
+            else {
+                $(".navbar-container").removeClass("sticky");
+            }
+
+        });
+
+        /* Single page nav
+        -----------------------------------------*/
+
+        if ($(window).width() < 992) {
+            navbarHeight = smallNavbarHeight;
+        }
+
+        $('#tmNavbar').singlePageNav({
+            'currentClass': "active",
+            offset: navbarHeight
+        });
+
+
+        /* Collapse menu after click
+           http://stackoverflow.com/questions/14203279/bootstrap-close-responsive-menu-on-click
+        ----------------------------------------------------------------------------------------*/
+
+        $('#tmNavbar').on("click", "a", null, function () {
+            $('#tmNavbar').collapse('hide');
+        });
+
+        // Handle nav offset upon window resize
+        $(window).resize(function () {
+            if ($(window).width() < 992) {
+                navbarHeight = smallNavbarHeight;
+            } else {
+                navbarHeight = bigNavbarHeight;
+            }
+
+            $('#tmNavbar').singlePageNav({
+                'currentClass': "active",
+                offset: navbarHeight
+            });
+        });
+
+
+        /*  Scroll to top
+            http://stackoverflow.com/questions/5580350/jquery-cross-browser-scroll-to-top-with-animation
+        --------------------------------------------------------------------------------------------------*/
+        $('#go-to-top').each(function () {
+            $(this).click(function () {
+                $('html,body').animate({ scrollTop: 0 }, 'slow');
+                return false;
+            });
+        });
+
+    });
+
+</script>

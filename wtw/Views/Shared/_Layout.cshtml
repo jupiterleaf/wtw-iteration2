@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -67,28 +68,28 @@
                             <a href="@Url.Action("Rules","Iteration2")">Rules</a>
                         </li>
                         <!--
-                        <li>
-                            <a href="@Url.Action("Rewards", "Iteration2")">Rewards</a>
-                        </li>-->
+                    <li>
+                        <a href="@Url.Action("Rewards", "Iteration2")">Rewards</a>
+                    </li>-->
                         <!--
-                        <li>
-                            <a href="@Url.Action("Forum", "Iteration2")">Forum</a>
-                        </li>
-                        <li class="menu-item-has-children">
-                            <a href="#">More</a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="@Url.Action("Contact", "Iteration2")">contact</a>
-                                </li>
-                                <li>
-                                    <a href="@Url.Action("About", "Iteration2")">About</a>
-                                </li>
-                                <li>
-                                    <a href="#">others</a>
-                                </li>
-                            </ul>
-                        </li>
-                        -->
+                    <li>
+                        <a href="@Url.Action("Forum", "Iteration2")">Forum</a>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#">More</a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="@Url.Action("Contact", "Iteration2")">contact</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("About", "Iteration2")">About</a>
+                            </li>
+                            <li>
+                                <a href="#">others</a>
+                            </li>
+                        </ul>
+                    </li>
+                    -->
                     </ul><!-- consult-menu -->
 
                     <div class="navbar-toggle"><span></span><span></span><span></span></div>
@@ -96,10 +97,10 @@
 
             </div>
         </header><!-- End / header -->
-
+        <div style="width:auto;height:7em;background-color:black"></div>
         @RenderBody()
         <!-- footer -->
-        <footer class="footer">
+        <footer class="footer" style="margin-top:0em">
             <div class="footer__copyright footer__item">2018 &copy; Copyright TechBees. All rights Reserved.<div class="consult_backToTop"><a href="#" id="back-to-top">Back To Top</a></div><div style="align-content:flex-start"></div></div>
 
         </footer><!-- End / footer -->
@@ -108,7 +109,7 @@
     <!-- Vendors-->
     @Scripts.Render("~/bundles/vendors")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false))
+    @RenderSection("scripts", required: false)
 
     <div id=""></div>
     <script type="text/javascript">

@@ -1,15 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using wtw.filter;
+using wtw;
 
 namespace wtw.Controllers
 {
+    public class MyViewModel {
+        public IEnumerable<accident> accidents { get; set; }
+        public IEnumerable<construction> constructions { get; set; }
+    }
     [AdminSuperAdmin]
     public class Iteration2Controller : Controller
     {
+        private wtwEntities1 db = new wtwEntities1();
+
         // GET: Iteration2
         public ActionResult Index()
         {
@@ -28,11 +37,17 @@ namespace wtw.Controllers
             return View();
         }
 
-        public ActionResult Navigation()
+        public async Task<ActionResult> Navigation()
         {
             ViewBag.Message = "Your application description page.";
-
-            return View();
+            var modelaccident = await db.accidents.ToListAsync();
+            var modelconstruction = await db.constructions.ToListAsync();
+            var myModel = new MyViewModel
+            {
+                accidents = modelaccident,
+                constructions = modelconstruction
+            };
+            return View(myModel);
         }
 
         public ActionResult Rules()

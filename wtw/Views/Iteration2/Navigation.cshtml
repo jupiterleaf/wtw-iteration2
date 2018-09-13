@@ -1,65 +1,164 @@
-﻿
+﻿@model wtw.Controllers.MyViewModel
+
 @{
     ViewBag.Title = "Navigation";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <style>
-    /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-    #map {
-        height: 100%;
+    #floating-panel {
+        position: absolute;
+        top: 24em;
+        left: 25%;
+        z-index: 11;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        width: 50%;
+        background: #fff;
+        padding: 5px;
+        font-size: 14px;
+        font-family: Arial;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
+        display: none;
     }
-    /* Optional: Makes the sample page fill the window. */
-    html, body {
+
+    #navipanel i {
+        font-size: 12px;
+    }
+
+    #navipanel select, #navipanel input {
+        font-size: 15px;
+    }
+
+    #navipanel select {
+        width: 100%;
+    }
+
+    #navipanel {
         height: 100%;
-        margin: 0;
-        padding: 0;
+        float: right;
+        width: 30%;
+        overflow: auto;
+        font-family: 'Roboto','sans-serif';
+    }
+
+    #legend {
+        font-family: Arial, sans-serif;
+        background: #fff;
+        padding: 10px;
+        margin: 10px;
+        border: 1px solid #999;
+        width: 11em;
+    }
+
+        #legend h6 {
+            margin-top: 0px;
+        }
+
+        #legend img {
+            vertical-align: middle;
+        }
+
+    .pac-container, .pac-item {
+        z-index: 214323223231231231222 !important;
+    }
+
+    @@media print {
+        #map {
+            height: 500px;
+            margin: 0;
+        }
+
+        #navipanel {
+            float: none;
+            width: auto;
+        }
     }
 </style>
 
-<div style="width:auto;height:8em">
-    <img src="~/assets/img/blackbar.png" style="background-size:cover" />
-</div>
+<script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
 
 <!-- Content-->
-<div class="md-content">
+<div class="md-content" style="margin:0em">
 
     <!-- page-title -->
     <div class="page-title">
-        <div class="container">
-            <div class="row" style="background:linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%)">
+        <div style="width:100%">
+            <div class="row" style="margin-bottom:3em">
                 <div class="col-lg-8 offset-0 offset-sm-0 offset-md-0 offset-lg-2 ">
                     <h2 class="page-title__title">@ViewBag.Title</h2>
 
                     <!-- start / navibar -->
                     <nav>
-                        <a class="breadcrumb__item" href="@Url.Action("Index","Home")">Home</a><span class="breadcrumb__item active">@ViewBag.Title</span>
+                        <a class="breadcrumb__item" href="@Url.Action("Index","Iteration2")">Home</a><span class="breadcrumb__item active">@ViewBag.Title</span>
                     </nav><!-- End / navibar -->
-
-
-
                 </div>
             </div>
 
-            <div class="col-md-12" style="padding-top:3em">
-                <div style="width:50%;margin:auto"><input class="form-control" style="border:groove" id="txtStart" placeholder="Starting point" type="text" name="Start" maxlength="100"></div>
-                <div style="width:50%;margin:auto"><input class="form-control" style="border:groove" id="txtEnd" placeholder="Destination" type="text" name="End" maxlength="100"></div>
+            <div class="" style="padding:1em;height:6em;width:50%" id="floating-panel">
+                <div style="width:100%;margin:0em;padding:0em"><input class="form-control" style="height:2em;padding:0em;margin:0em" id="txtStart" placeholder="Starting point" type="text" name="Start" maxlength="100"></div>
+                <div style="width:100%;margin:0em;padding:0em"><input class="form-control" style="height:2em;padding:0em;margin:0em" id="txtEnd" placeholder="Destination" type="text" name="End" maxlength="100"></div>
 
-                <hr />
-                <div id="map" style="padding:1em;border:groove;height:600px">
-
+            </div>
+            <div class="col-md-12" style="z-index:10">
+                <div id="map" style="float:left;padding:1em;width:70%; height:50em"></div>
+                <div id="navipanel" style="height:50em;">
+                    <p>Total Distance: <span id="total"></span></p>
                 </div>
             </div>
+            <!--
+                <div class="col-md-12" style="z-index:-2">
+                    <div id="warnings-panel"></div>
+                </div>
+            -->
         </div>
-        <section class="md-section">
-            <div class="text-center"><a class="btn btn-primary btn-w180" href="#">Load more</a></div>
+        <section class="md-section" style="padding-bottom:0em">
+            <div class="text-center"><a class="btn btn-primary btn-w180" href="#">back-to-top</a></div>
         </section>
     </div><!-- End / page-title -->
 </div>
+<div id="legend">
+    <h6>Legend</h6>
+    <div style="width:100%;margin:0px;font-family: 'Roboto','sans-serif'">
+        <div style="height:4em">
+            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
+                <input type="checkbox" id="switch-1" class="mdl-switch__input" checked onclick="checkbox_acci()">
+                <span class="mdl-switch__label"><img src="~/assets/img/icon/marker/red-circle.png" style="width:2em;height:2em" title="accident" /></span>
+            </label>
+        </div>
+        <div style="height:4em">
+            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2">
+                <input type="checkbox" id="switch-2" class="mdl-switch__input" checked onclick="checkbox_cons()">
+                <span class="mdl-switch__label"><img src="~/assets/img/icon/marker/construction.png" title="construction" /></span>
+            </label>
+        </div>
+        <!--
 
+        <div style="height:4em;">
+            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-3">
+                <input type="checkbox" id="switch-3" class="mdl-switch__input" checked onclick="checkbox_cluster()">
+                <span class="mdl-switch__label"><img src="~/assets/img/icon/marker/m1.png" style="width:2em;height:2em" title="cluster" /></span>
+            </label>
+        </div>
+            -->
+    </div>
+</div>
+<div id="weather" onclick="getWeatherData()"></div>
 
+@foreach (var item in Model.constructions)
+{
+    <div data-construction="@Json.Encode(item)"></div>
+}
+@foreach (var item in Model.accidents)
+{
+    <div data-accident="@Json.Encode(item)"></div>
+}
 <!-- End / Content-->
-
-<script src="/assets/js/navigation.js"></script>
+<script src="~/assets/js/navigation.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKoXlekiI84_yo1N8Yux6tWzeNqLBHhYI&libraries=places&callback=initMap" async defer></script>
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>

@@ -63,28 +63,28 @@
                             <a href="@Url.Action("Rules","Iteration1")">Rules</a>
                         </li>
                         <!--
-                        <li>
-                            <a href="@Url.Action("Rewards", "Iteration1")">Rewards</a>
-                        </li>-->
+                    <li>
+                        <a href="@Url.Action("Rewards", "Iteration1")">Rewards</a>
+                    </li>-->
                         <!--
-                        <li>
-                            <a href="@Url.Action("Forum", "Iteration1")">Forum</a>
-                        </li>
-                        <li class="menu-item-has-children">
-                            <a href="#">More</a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="@Url.Action("Contact", "Iteration1")">contact</a>
-                                </li>
-                                <li>
-                                    <a href="@Url.Action("About", "Iteration1")">About</a>
-                                </li>
-                                <li>
-                                    <a href="#">others</a>
-                                </li>
-                            </ul>
-                        </li>
-                        -->
+                    <li>
+                        <a href="@Url.Action("Forum", "Iteration1")">Forum</a>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#">More</a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="@Url.Action("Contact", "Iteration1")">contact</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("About", "Iteration1")">About</a>
+                            </li>
+                            <li>
+                                <a href="#">others</a>
+                            </li>
+                        </ul>
+                    </li>
+                    -->
                     </ul><!-- consult-menu -->
 
                     <div class="navbar-toggle"><span></span><span></span><span></span></div>
@@ -92,7 +92,7 @@
 
             </div>
         </header><!-- End / header -->
-
+        <div style="width:auto;height:7em;background-color:black"></div>
         @RenderBody()
         <!-- footer -->
         <footer class="footer">
@@ -104,7 +104,7 @@
     <!-- Vendors-->
     @Scripts.Render("~/bundles/vendors")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false))
+    @RenderSection("scripts", required: false)
 
 </body>
 </html>
