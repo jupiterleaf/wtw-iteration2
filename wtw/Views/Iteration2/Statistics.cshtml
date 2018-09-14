@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Statistics";
+    ViewBag.Title = "Know your suburb better";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -44,9 +44,9 @@
     <!-- page-title -->
     <div class="page-title">
         <div class="container">
-            <div class="row" style="margin:auto">
-                <div class="col-lg-8 offset-0 offset-sm-0 offset-md-0 offset-lg-2 ">
-                    <h2 class="page-title__title">@ViewBag.Title</h2>
+            <div class="row">
+                <div class="col-lg-10 offset-0 offset-sm-0 offset-md-0 offset-lg-1 ">
+                    <h2 class="page-title__title" style="width:100%">@ViewBag.Title</h2>
                     <nav>
                         <a class="breadcrumb__item" href="@Url.Action("Index","Iteration2")">Home</a><span class="breadcrumb__item active">@ViewBag.Title</span>
                     </nav>
@@ -55,11 +55,11 @@
             </div>
         </div>
         
-        <section class="md-section">
+        <section class="md-section" style="padding-top:50px">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12" style="background-color:#1B1B1B; margin-bottom:50px;">
-                        <img src="~/assets/img/see-stat.png" alt="Image" class="img-fluid tm-img">
+                    <div class="col-lg-12"style="margin-bottom:50px">
+                        <img src="~/assets/img/see-stat.jpg" alt="Image" class="img-fluid tm-img" style="width:100%">
                     </div>
                     <div class="col-lg-12">
                         <!--<iframe frameborder=0 width="800" height="600" src="https://reports.zoho.com/open-view/1804641000000002397/5d65ba53161787410f83624c6bf54d1b"></iframe>-->
