@@ -14,7 +14,7 @@ namespace wtw.Controllers
         public IEnumerable<accident> accidents { get; set; }
         public IEnumerable<construction> constructions { get; set; }
     }
-    [AdminSuperAdmin]
+    //[AdminSuperAdmin]
     public class Iteration2Controller : Controller
     {
         private wtwEntities1 db = new wtwEntities1();
